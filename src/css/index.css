@@ -38,7 +38,7 @@ main {
     background-color: var(--calculadora);
 }
 
-.calculadora .pantalla {
+.calculadora__pantalla {
     width: 100%;
     margin: 20px 0;
     padding: 10px 20px;
@@ -47,38 +47,40 @@ main {
     font-size: 2.5rem;
 }
 
-.calculadora .pantalla:focus {
+.calculadora__pantalla:focus {
     outline: none;
 }
 
-.botones {
+.calculadora__botones {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(20px, 1fr));
     gap: 20px;
     margin: 10px;
 }
 
-.botones button {
-    padding: 20px;
+.botones__boton {
+    padding: 15px 20px;
     border: none;
     border-radius: 25%;
     background-color: var(--botones1);
     box-shadow: 0px 5px 10px 1px  var(--fondo);
+    transition: filter .25s;
 }
 
-.botones .operador {
+.botones__boton.operador {
     background-color: var(--botones2);
 }
 
-.botones .igual {
+.botones__boton.igual {
     background-color: var(--boton-resultado);
 }
 
-.botones button:hover {
+.botones__boton:hover {
+    filter: brightness(80%);
     cursor: pointer;
 }
 
-.botones button:active {
+.botones__boton:active {
     transform: translateY(5px);
     box-shadow: 0px 3px 10px 1px  var(--fondo);
 
