@@ -2,8 +2,8 @@
 :root {
     --fondo: #1e1e1e;
     --calculadora: #404040;
-    --botones1: #464646;
-    --botones2: #5e5e5e;
+    --botones-numeros: #464646;
+    --botones-operador: #5e5e5e;
     --boton-resultado: #dda142;
     --tipografia: #d0d0d0;
 } 
@@ -33,8 +33,9 @@ main {
 }
 
 .calculadora {
-    max-width: 400px;
+    width: 320px;
     padding: 10px;
+    border-radius: 20px;
     background-color: var(--calculadora);
 }
 
@@ -53,25 +54,35 @@ main {
 
 .calculadora__botones {
     display: grid;
-    grid-template-columns: repeat(4, minmax(20px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 55px;
     gap: 20px;
     margin: 10px;
 }
 
 .botones__boton {
-    padding: 15px 20px;
+    width: 100%;
+    height: 100%;
     border: none;
     border-radius: 25%;
-    background-color: var(--botones1);
+    background-color: var(--botones-numeros);
     box-shadow: 0px 5px 10px 1px  var(--fondo);
     transition: filter .25s;
 }
 
 .botones__boton.operador {
-    background-color: var(--botones2);
+    background-color: var(--botones-operador);
+}
+
+.botones__boton.operador:nth-child(1) {
+    grid-column: 1 / 3;
+    border-radius: 15%;
+    background-color: var(--botones-operador);
 }
 
 .botones__boton.igual {
+    grid-column: 3 / 5;
+    border-radius: 15%;
     background-color: var(--boton-resultado);
 }
 
@@ -83,5 +94,8 @@ main {
 .botones__boton:active {
     transform: translateY(5px);
     box-shadow: 0px 3px 10px 1px  var(--fondo);
+}
 
+.botones__boton i {
+    color: var(--tipografia);
 }

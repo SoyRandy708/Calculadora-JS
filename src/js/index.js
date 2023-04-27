@@ -1,4 +1,4 @@
-let pantalla = document.querySelector(".calculadora__pantalla")
+const pantalla = document.querySelector(".calculadora__pantalla")
 const botones = document.getElementsByClassName("botones__boton")
 const botonesArray = Array.from(botones)
 
@@ -11,8 +11,11 @@ botonesArray.forEach(boton => {
 const calculadora = (boton) => {
     console.log(boton.value)
     switch (boton.value) {
-        case "C":
+        case "--":
             borrar()
+        break
+        case "C":
+            borrarTodo()
         break
     
         case "=":
@@ -26,6 +29,10 @@ const calculadora = (boton) => {
 }
 
 const borrar = () => {
+    pantalla.textContent = pantalla.textContent
+}
+
+const borrarTodo = () => {
     pantalla.textContent = "0"
 }
 
@@ -38,4 +45,5 @@ const mostrar = (boton) => {
         pantalla.textContent = ""
     }
     pantalla.textContent += boton.value
+    console.log(pantalla.textContent)
 }
