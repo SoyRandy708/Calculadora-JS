@@ -1,11 +1,11 @@
 /* GENERAL */
 :root {
-    --fondo: #1e1e1e;
-    --calculadora: #404040;
-    --botones-numeros: #464646;
-    --botones-operador: #5e5e5e;
-    --boton-resultado: #dda142;
-    --tipografia: #d0d0d0;
+    --background-dark-1: #1e1e1e;
+    --background-dark-2: #404040;
+    --background-dark-3: #464646;
+    --background-dark-4: #5e5e5e;
+    --background-dark-5: #dda142;
+    --color-dark: #d0d0d0;
 } 
 
 html {
@@ -16,7 +16,7 @@ html {
     box-sizing: border-box;
     font-size: 2rem;   
     font-family: 'Roboto', sans-serif;
-    color: var(--tipografia);
+    color: var(--color-dark);
 }
 
 body {
@@ -29,14 +29,14 @@ main {
     display: grid;
     place-items: center;
     min-height: 100vh;
-    background-color: var(--fondo);
+    background-color: var(--background-dark-1);
 }
 
 .calculadora {
     width: 320px;
     padding: 10px;
     border-radius: 20px;
-    background-color: var(--calculadora);
+    background-color: var(--background-dark-2);
 }
 
 .calculadora__pantalla {
@@ -61,29 +61,32 @@ main {
 }
 
 .botones__boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     border: none;
     border-radius: 25%;
-    background-color: var(--botones-numeros);
-    box-shadow: 0px 5px 10px 1px  var(--fondo);
+    background-color: var(--background-dark-3);
+    box-shadow: 0px 5px 10px 1px  var(--background-dark-1);
     transition: filter .25s;
 }
 
 .botones__boton.operador {
-    background-color: var(--botones-operador);
+    background-color: var(--background-dark-4);
 }
 
 .botones__boton.operador:nth-child(1) {
     grid-column: 1 / 3;
     border-radius: 15%;
-    background-color: var(--botones-operador);
+    background-color: var(--background-dark-4);
 }
 
 .botones__boton.igual {
     grid-column: 3 / 5;
     border-radius: 15%;
-    background-color: var(--boton-resultado);
+    background-color: var(--background-dark-5);
 }
 
 .botones__boton:hover {
@@ -93,9 +96,10 @@ main {
 
 .botones__boton:active {
     transform: translateY(5px);
-    box-shadow: 0px 3px 10px 1px  var(--fondo);
+    box-shadow: 0px 3px 10px 1px  var(--background-dark-1);
 }
 
-.botones__boton i {
-    color: var(--tipografia);
+.botones__boton span {
+    color: var(--color-dark);
+    font-size: 2.5rem;
 }
