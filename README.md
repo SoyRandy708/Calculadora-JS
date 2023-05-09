@@ -8,4 +8,6 @@ Para este proyecto, se utilizaron clases en JS para el funcionamiento de la calc
 ## Despliegue 
 https://soyrandy708.github.io/Calculadora-JS/
 
-![](https://res.cloudinary.com/dwog1xmvw/image/upload/v1683493431/ProyectosPersonales/CapturasProyectos/calculadora_s9a9eq.png)
+<p>
+    <img alt="Imagen de Calculadora" width="50%" src="./src/svg/calculdora-dark.png"><img alt="Imagen de Calculadora" width="50%" src="./src/svg/calculadora-light.png"> 
+</p>
